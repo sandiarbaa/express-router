@@ -2,7 +2,11 @@ const express = require("express");
 const router = express.Router();
 
 router.get("/", (req, res) => {
-  res.send("movies index");
+  // cookies ini disimpan ke dalam client side (browser)
+  // dan dapat dimanfaatkan di berbagai page
+  const { user = "No-name", token = "" } = req.cookies;
+  // console.log(user);
+  res.send(`Hello ${user}, your token is ${token}`);
 });
 
 router.get("/create", (req, res) => {

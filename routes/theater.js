@@ -2,7 +2,10 @@ const express = require("express");
 const router = express.Router();
 
 router.get("/", (req, res) => {
-  res.send("theater index");
+  const { user = "No-name", token = "" } = req.cookies;
+  // console.log(user);
+  res.send(`Hello ${user}, your token is ${token}`);
+  // res.send("theater index");
 });
 
 router.get("/create", (req, res) => {
