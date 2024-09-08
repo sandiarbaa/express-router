@@ -9,7 +9,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 // define routes
-app.use("/theater", require("./routes/theater")); // parameter 1 is the path, parameter 2 is the route
+app.use("/admin", require("./routes/admin"));
+app.use("/theater", require("./routes/theater"));
 app.use("/movies", require("./routes/movies"));
 
 app.listen(port, () => {
