@@ -12,6 +12,11 @@ router.use((req, res, next) => {
 });
 
 router.get("/", (req, res) => {
+  // data cookies ini bisa dimanfaatkan di berbagai page dari si websitenya itu sendiri dengan 1 kali akses
+  // membuat cookies bisa lebih dari 1, dan dibuatnya harus wajib sebelum respon misal:send, render
+  // datanya akan hilang kalau melakukan clear cache/cookies
+  res.cookie("token", "1234567890abcd");
+  res.cookie("user", "admin");
   res.send("administrator");
 });
 
